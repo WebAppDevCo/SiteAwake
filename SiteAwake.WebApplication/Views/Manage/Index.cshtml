@@ -1,0 +1,63 @@
+﻿@model SiteAwake.WebApplication.Models.IndexViewModel
+@{
+    ViewBag.Title = "Account Management";
+}
+
+<h2>@(ViewBag.Title)</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <h4>Change your account settings</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Username / Email:</dt>
+        <dd>
+            @(Model.Email)
+        </dd>
+        <dt>Password:</dt>
+        <dd>
+            [
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("Change your password", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetPassword")
+            }
+            ]
+        </dd>
+        <dt>Subscription Status:</dt>
+        <dd>
+            @(Model.Subscribed ? "Active Membership" : "Trial Membership")
+        </dd>
+        @{
+            if (!Model.Subscribed)
+            {
+                <dt>Trial Expires:</dt>
+                <dd>
+                    @(Model.DaysLeftInTrial < 0 ? 0 : Model.DaysLeftInTrial) days
+                </dd>
+            }
+        }
+        @{
+            if (!Model.Cancelled)
+            {
+                <dt></dt>
+                <dd>
+                    [
+                    @Html.ActionLink("Cancel your service", "CancelService")
+                    ]
+                </dd>
+            }
+            else
+            {
+                <dt></dt>
+                <dd>
+                    <span style="color:red;">This Account Has Been Cancelled</span>
+                </dd>
+            }
+        }
+        
+    </dl>
+</div>

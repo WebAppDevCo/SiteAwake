@@ -1,0 +1,77 @@
+﻿body {
+    background-color: white;
+}
+
+.body-content {
+    margin-top: 60px;
+}
+
+.navbar-toggle {
+    height: 32px;
+    width: 48px;
+    right: 0px;
+    position: absolute;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    font-size: 16px !important;
+}
+
+.checkbox input[type="checkbox"] {
+    margin-left: 0px;
+}
+
+.navbar-inverse {
+    background-color: #232a31;
+    border-color: #eee;
+}
+
+    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+        border-color: #eee;
+    }
+
+    .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+        background-color: transparent;
+    }
+
+    .navbar-inverse .navbar-toggle {
+        border-color: #eee;
+    }
+
+    .navbar-inverse .navbar-brand,
+    .navbar-inverse .navbar-nav > li > a {
+        color: #fff;
+    }
+
+    .navbar-inverse .navbar-toggle .icon-bar {
+        margin-left: 2px;
+    }
+
+    .navbar-inverse .navbar-brand {
+        padding: 0;
+    }
+
+        .navbar-inverse .navbar-brand > img {
+            margin-top: -1px;
+        }
+
+.account-admin input, .account-admin select {
+    margin-left: 0px;
+    margin-bottom: 12px;
+    max-width: 300px;
+}
+
+dt, dd {
+    line-height: 2;
+}
+
+@media screen and (max-width: 767px) {
+
+    button, html input[type="button"], input[type="reset"], input[type="submit"] {
+        width: 100%;
+        height: 60px;
+        font-size: 22px !important;
+        font-weight: 700;
+        margin-top: 20px;
+    }
+}

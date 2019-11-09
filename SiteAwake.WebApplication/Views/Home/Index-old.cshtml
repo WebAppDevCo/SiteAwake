@@ -1,0 +1,232 @@
+﻿@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+    <title>Keep Your Website Awake - Free Trial - Prevent Slow Load</title>
+    <meta name="description" content="Is Your Site Loading Slow? Shared Hosting Websites Take 20 Seconds To Wake Up. Stop Yours From Sleeping. SiteAwake Website Monitor &amp; Wake-Up Call." />
+    <meta name="keywords" content="hosted website slow,shared hosting slow,website monitor,shared hosting application pool" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="shortcut icon" type="image/x-icon">
+    <link rel="icon" href="/Images/icon.png" type="image/png">
+</head>
+<body ng-app="SiteAwake.WebApplication.Common"  ng-controller="SignUpController as signUp">
+    <div class="global-network-background">
+        <img src="~/Images/blue-sky.jpeg" />
+    </div>
+    <section id="header" class="header">
+        <div class="col-xs-12 text-center">
+            <div class="link link-sign-in"><a href="~/Account/Login">Log In</a></div>
+            <div class="link"><a href="javascript:(0)" id="showContactDialog" name="showContactDialog">Contact</a></div>
+        </div>
+    </section>
+    <section id="content" class="container">
+        <div id="main-content" class="main-content">
+                
+            @*<div class="panel panel-opaque">
+               
+            </div>*@
+                
+            <div class="panel-body col-xs-12 panel-body-opacity-overlay">
+                  <div class="col-xs-12 col-sm-12">
+                    <div class="panel about-panel">
+                        <div class="col-xs-12 text-center logo">
+                            <img class="img-responsive" src="~/Images/site-awake-sm.png" />
+                        </div>
+                        <div class="text-left">
+                            <h1>Is Your Website Slow To Load?</h1>
+                            <h2>Fix Slow Loading Shared Hosting Websites</h2>
+                            <p>Running a website in a shared hosting environment has many benefits. Slow website loading due to long wake-up times are not one of them. Is your site loading slow? Try the SiteAwake website wake-up call and site monitoring service. It's easy to set up and free for 30 days.</p>
+                            <h2>Website Monitor &amp; Dashboard</h2>
+                            <p>SiteAwake will communicate with your website at an interval you choose. Even once a minute. You can enable email alerts to be notified if your website appears to be down. Your easy to use <a class="dashboard" href="javascript: void(0);">dashboard<i class="fa fa-dashboard" style="text-indent: 3px;"></i></a> and account pages will contain information such as website status up/down, last wake-up call, time taken, and uptime. SiteAwake website monitoring is convenient and is part of the wake-up call service.</p>
+                            <h2>No Credit Card Required</h2>
+                            <p>Try SiteAwake FREE for 30 days! During the introductory trial period, you can choose to subscribe to SiteAwake at a cost of $4.99 per month. You can cancel your introductory trial or subscription at any time. To get started with your free introductory trial, just fill out the form below. No other information is needed.</p>
+                            <span class="container-dashboard"></span>
+                        </div>
+                    @*</div>
+                
+                    <div class="panel  panel contact-panel">*@
+                        <div class="text-left">
+                            <h2>Sign Up for SiteAwake</h2>
+                            <section id="message-sender" style="display: inline-block;" participate-key-pressed>
+                                <form id="frmSignUp" name="frmSignUp" class="form-inline" ng-hide="signUp.showConfirm">
+                                    <div class="col-xs-12 col-md-6">
+                                        <div class="field-div">
+                                            <label class="">Email<span class="required">*</span></label>
+                                        </div>
+                                        <div class="field-div">
+                                            <input ng-model="signUp.email" class="form-control" style="min-width: 240px;" type="email" maxlength="50" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <div class="field-div">
+                                            <label class="">Password<span class="required">*</span></label>
+                                        </div>
+                                        <div class="field-div">
+                                            <div class="form-group" style="position: relative;">
+                                                <input type="password" id="password" name="password" class="form-control" ng-model="signUp.password" ng-minlength="8" ng-maxlength="14" required />
+                                                <span class="fa fa-eye show-hide-icon" title="Show / Hide Password" onclick="var elem = $('#password'); if (elem.attr('type') == 'password') { elem.attr('type', 'text'); } else { elem.attr('type', 'password'); }"></span>
+                                            </div>
+                                            <span id="password-length" name="password-length" style="color:red;display:none;" ng-show="(signUp.password != '' && (frmSignUp.password.$error.minlength || frmSignUp.password.$error.maxlength))"><br />Password must be 8-14 characters</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-7">
+                                        <div class="field-div">
+                                            <label class="">Website URL<span class="required">*</span></label>
+                                        </div>
+                                        <div class="field-div">
+                                            <select class="form-control protocol" ng-model="signUp.protocol" required>
+                                                <option>http://</option>
+                                                <option>https://</option>
+                                            </select>
+                                        </div>
+                                        <div class="field-div">
+                                            <input ng-model="signUp.url" class="form-control" style="margin-left: 0px;min-width: 240px;" type="text" maxlength="100" required />
+                                        </div>                                        
+                                    </div>
+                                    <div class="col-xs-12 col-md-5">
+                                        <div class="field-div">
+                                            <label class="">Wake-up Interval Minutes<span class="required">*</span></label>
+                                        </div>
+                                        <div class="field-div interval-minutes">
+                                            <input ng-model="signUp.wakeupInterval" class="form-control" type="number" min="1" max="60" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="checkbox terms-checkbox">
+                                            <input type="checkbox" ng-checked="signUp.agreedToTerms" ng-model="signUp.agreedToTerms" ng-change="signUp.onAgreedToTermsCheckChanged();" />
+                                            I agree to the <a id="showTermsAndConditions" name="showTermsAndConditions" href="javascript:void(0);">Terms &amp; Conditions</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="field-div">
+                                            <span id="feedback" name="feedback" style="display:none;color:red;">{{signUp.feedbackMessage}}</span>
+                                            <button id="btnSignUp" name="btnSignUp" class="btn btn-success" ng-disabled="signUp.processingForm" ng-click="frmSignUp.$valid && signUp.onSignUpClick($event);">Sign Up</button>
+                                            <img class="sign-up-processing" style="display: none;" ng-show="signUp.processingForm" src="~/Assets/img/loading_2x.gif" />
+                                        </div>
+                                    </div>
+                                </form>
+                                <div>
+                                    <div class="col-xs-12 form-group" ng-show="signUp.showConfirm" id="participationConfirmation" name="participationConfirmation" style="display:none;">
+                                        <p>&nbsp;</p>
+                                        <p>Thank you for signing up. Please check your email to verify your email address. <button id="btnResendVerification" name="btnResendVerification" class="btn btn-success" ng-click="signUp.onResendVerificationClick($event);">Resend</button></p>
+                                        <br />
+                                        <span id="feedback1" name="feedback1" style="display:none;color:red;">{{signUp.feedbackMessage}}</span>
+                                    </div>
+                                </div>
+                                
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <p>&copy; @DateTime.Now.Year - SiteAwake.net</p>
+    </section>
+    
+    <div id="modalDialogMessage" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Contact</h2>
+                </div>
+                <div class="modal-body">
+                    <div style="position:relative;">
+                        <div class="row" style="margin: 0px;">
+                            <ng-include src="'/app/components/home/contactView.html'">
+                            </ng-include>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modalTermsAndConditions" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Terms &amp; Conditions</h2>
+                </div>
+                <div class="modal-body">
+                    <div style="position:relative;">
+                        <div class="row" style="margin: 0px;">
+                            <iframe class="terms-frame" frameborder="0" scrolling="auto" src="~/terms-and-conditions.html"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success pull-left terms-button" ng-click="signUp.agreeToTerms($event);">@*<i class="fa fa-check-circle-o"></i>&nbsp;&nbsp;*@I Agree</button>
+                </div>
+            </div>
+        </div>
+    </div>
+                 
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <script type="text/javascript" src="~/Assets/js/angular.min.js"></script>
+    <script type="text/javascript" src="~/app/app.module.js"></script>
+    <script type="text/javascript" src="~/app/shared/common/utilitiesService.js"></script>
+    <script type="text/javascript" src="~/app/components/home/homeService.js"></script>
+    <script type="text/javascript" src="~/app/components/home/messageController.js"></script>
+    <script type="text/javascript" src="~/app/components/home/signUpController.js"></script>
+
+    <script>
+        $(function () {
+            $('#showContactDialog').click(function () {
+                $('#modalDialogMessage').modal('show');
+            });
+
+            $('#showTermsAndConditions').click(function () {
+                $('#modalTermsAndConditions').modal('show');
+
+                $.get('/Home/LogTermsAndConditionsClicked', function (data) {
+                    //$('.result').html(data);
+                });
+            });
+
+            $('#participationConfirmation').show();
+            $('#password-length').show();
+            $('#feedback').show();
+            $('#feedback1').show();
+            $('.sign-up-processing').show();
+            
+            $('.dashboard').popover({ container: ".container-dashboard", title: "", content: "<div style='height:471px;'><img src='/Assets/img/mobile-dashboard-demo.png' width='270' class='img-responsive' /><div>", html: true, placement: $(window).innerWidth() <= (767 + 1) ? "auto" : "left" });
+    
+            $('.dashboard').click(function () {
+                $.get('/Home/LogDashboardExampleClicked', function (data) {
+                    //$('.result').html(data);
+                });
+            });
+
+            $.preloadImages = function () {
+                for (var i = 0; i < arguments.length; i++) {
+                    $("<img />").attr("src", arguments[i]);
+                }
+            }
+
+            $.preloadImages('/Assets/img/mobile-dashboard-demo.png');
+        });
+    </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-83642428-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</body>
+</html>

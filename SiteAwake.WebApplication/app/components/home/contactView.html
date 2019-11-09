@@ -1,0 +1,30 @@
+﻿<section id="message-sender" ng-controller="MessageController as message" ><!--send-key-pressed-->
+    <form id="frmContact" name="frmContact" ng-hide="message.showConfirm">
+        <div class="col-xs-12 form-group">
+            <label>Name:</label>
+            <input ng-model="message.name" class="form-control" type="text" maxlength="50" />
+        </div>
+        <div class="col-xs-12 form-group">
+            <label>Phone:</label>
+            <input ng-model="message.phone" class="form-control" type="tel" maxlength="50" />
+        </div>
+        <div class="col-xs-12 form-group">
+            <label>Email:<span class="required">*</span></label>
+            <input ng-model="message.email" class="form-control" type="email" maxlength="50" required />
+        </div>
+        <div class="col-xs-12 form-group">
+            <label>Message:<span class="required">*</span></label>
+            <textarea ng-model="message.message" class="form-control" rows="7" maxlength="8000" required></textarea>
+        </div>
+        <div class="col-xs-12 form-group">
+            <button id="btnSendMessage" class="btn btn-success contact-button pull-left" ng-click="frmContact.$valid && message.onSendMessageClick($event);">Send</button>
+            <button type="button" class="btn btn-default contact-button pull-right" ng-click="message.onClose($event);">Close</button>
+        </div>
+    </form>
+    <div>
+        <div class="col-xs-12 form-group" ng-show="message.showConfirm">
+            <p>Thank you for contacting SiteAwake.</p>
+            <button type="button" class="btn btn-default contact-button" ng-click="message.onClose($event);">Close</button>
+        </div>
+    </div>
+</section>

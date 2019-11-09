@@ -1,0 +1,442 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+    <title>Keep Your Website Awake - Free Trial - Prevent Slow Load</title>
+    <meta name="description" content="Is Your Website Loading Slow? Shared Hosting Websites Take 20 Seconds To Wake Up. Stop Yours From Sleeping. SiteAwake Website Monitor &amp; Wake-Up Call." />
+    <meta name="keywords" content="hosted website slow,shared hosting slow,website monitor,shared hosting application pool" />
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!--==============GOOGLE FONT - OPEN SANS=================-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!--============== ICON FONT FONT-AWESOME=================-->
+
+    <link href="~/css/font-awesome.css" rel="stylesheet">
+
+    <!--==============MAIN CSS FOR HOSTING PAGE=================-->
+
+    <link href="~/css/hosting.css" rel="stylesheet" media="all">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--==============Mordernizr =================-->
+    
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+
+    <!--===================FLEX SLIDER=======================-->
+
+    <link rel="stylesheet" href="~/css/flexslider.css" />
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/js/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+        $(window).on('load', function() { 
+            $('.flexslider').flexslider({
+                animation: "slide",
+                useCSS: Modernizr.touch,
+                slideshowSpeed: 20000
+            });
+        });
+  
+    </script>
+        
+    <link rel="shortcut icon" type="image/x-icon">
+    <link rel="icon" href="/Images/icon.png" type="image/png">
+</head>
+<body id="home" data-spy="scroll" data-target=".navbar-collapse" data-offset="100" ng-app="SiteAwake.WebApplication.Common"  ng-controller="SignUpController as signUp">
+
+    <!--==============Logo & Menu Bar=================-->
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="#"> <img src="~/images/logo.png" alt="SiteAwake" title="SiteAwake"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#home">HOME</a></li>
+                    <li class="hidden-sm"><a href="#features">FEATURES</a></li>
+                    <li><a href="javascript:void(0)" id="showContactDialog" name="showContactDialog">CONTACT</a></li>
+                    <li><a href="~/Account/Login" role="button">Login</a></li>
+                    <li><a href="#signup" role="button" class="btn btn-success">Sign Up</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+
+        </div>
+    </nav>
+
+    <!--==============HEADER =================-->
+    <div class="jumbotron masthead">
+
+        <!--==============Hero Unit=================-->
+        <div class="container">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <div class="hero-unit">
+                            <div class="col-xs-12 text-center logo">
+                                <img class="img-responsive banner-logo" src="~/Images/site-awake.png" />
+                            </div>
+                            <h1>Is Your Website Slow To Load?</h1>
+                            <h3>Fix Slow Loading<br class="visible-xs" /><span class="hidden-xs">&nbsp;</span>Shared Hosting Websites</h3>
+                            <h3>Sign up is free.<br class="visible-xs" /><span class="hidden-xs">&nbsp;</span>No credit card required.</h3>
+                            <div class="slider-actions text-center"> <a href="#features" class="slider-btn btn btn-primary btn-lg">Learn More </a> <a href="#signup" class="slider-btn btn btn-success btn-lg">Sign Up</a> </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="slide2">
+                            <p><img src="~/images/server1.png" alt="server" class="img-responsive center-block"></p>
+                            <h3>Running a website in a shared hosting environment has many benefits.<br />Slow website loading due to long wake-up time is not one of them.</h3>
+                            <div class="slider-actions text-center"> <a href="#features" class="slider-btn btn btn-primary btn-lg">Learn More </a> <a href="#signup" class="slider-btn btn btn-success btn-lg">Sign Up </a> </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="slide3">
+                            <p class="pull-left"><img src="~/images/server2.png" alt="server" class="img-responsive"></p>
+                            <h1>Is your site loading slow?</h1>
+                            <h3>Try the SiteAwake website wake-up call and site monitoring service. It's easy to set up and free for 30 days.</h3>
+                            <div class="slider-actions text-center"> <a href="#features" class="slider-btn btn btn-primary btn-lg">Learn More </a> <a href="#signup" class="slider-btn btn btn-success btn-lg">Sign Up </a> </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--==============Content Area=================-->
+
+    <div class="container">
+        <!--============== Main Features ==============-->
+
+        <div class="row mainFeatures" id="features">
+            <div class="col-sm-6 col-md-4">
+                <div class="img-thumbnail">
+                    <img src="~/images/secure_img.png" width="85" height="88" alt="secure">
+                    <div class="caption">
+                        <h4>Website Monitor</h4>
+                        <p>SiteAwake will communicate with your website at an interval you choose. Even once a minute.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="img-thumbnail">
+                    <img src="~/images/fast_img.png" width="85" height="88" alt="secure">
+                    <div class="caption">
+                        <h4>Dashboard</h4>
+                        <p>Your easy to use <a class="dashboard" href="javascript: void(0);">dashboard<i class="fa fa-dashboard" style="text-indent: 3px;"></i></a> will contain key information at a glance.</p>
+                        <span class="container-dashboard"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-0">
+                <div class="img-thumbnail">
+                    <img src="~/images/support_img.png" width="85" height="88" alt="secure">
+                    <div class="caption">
+                        <h4>Convenience</h4>
+                        <p>Enable email alerts to be notified if your website appears to be down.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--============== Other Features ==============-->
+
+        <div class="row PageHead">
+            <div class="col-md-12">
+                <h1>Get Started Now</h1>
+                <h3>It's Free &amp; Easy!</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 features">
+                <img src="~/images/backup_icon.png" alt="icon" class="img-responsive">
+                <h4>No Credit Card Required</h4>
+                <p>The only info needed to get started is shown in the <a href="#signup" class="sign-up slider-btn">sign up</a> section below.</p>
+            </div>
+            <div class="col-sm-6 features">
+                <img src="~/images/setup_icon.png" alt="icon" class="img-responsive">
+                <h4>Instant Setup</h4>
+                <p>As soon as you <a href="#signup" class="sign-up slider-btn">sign up</a>, SiteAwake will begin monitoring your website.</p>
+            </div>
+        </div>
+        
+        <!--============== Features Layout ==============-->
+
+        <div class="row FeatLayout">
+            <div class="col-md-5 Featimg"> <img src="~/images/features_img.png" alt="feature" class="img-responsive center-block"></div>
+            <div class="col-md-7">
+                <h1>Shared hosting is great, but Microsoft .NET Web Applications should not sleep due to low traffic.</h1>
+                <p class="lead">Fix your slow loading website with this easy to use service.</p>
+                <p>Try SiteAwake FREE for 30 days! During the introductory trial period, you can choose to subscribe to SiteAwake at a cost of $4.99 per month. You can cancel your introductory trial or subscription at any time. To get started with your free introductory trial, just fill out the form below. No other information is needed.</p>
+                <p>The SiteAwake Service Includes:</p>
+                <ul class="ticklist">
+                    <li>Website Status Up/Down</li>
+                    <li>Last Wake-Up Call</li>
+                    <li>Time Taken</li>
+                    <li>Uptime</li>
+                    <li>Email Alerts</li>
+                    <li>Intervals As Frequent As 1 Minute</li>
+                </ul>
+            </div>
+        </div>
+     
+        @*<div>
+            <div class="row PageHead">
+                <div class="container">
+                    <hr />
+                </div>
+            </div>
+        </div>*@
+
+        <!--============== Sign up ==============-->
+        <div class="row PageHead" id="signup">
+            <div class="col-md-12">
+                <h1>Sign Up for SiteAwake</h1>
+                <h3>No Credit Card Required</h3>
+            </div>
+        </div>
+        <div class="row">
+            <section id="message-sender" class="col-md-offset-2 col-md-8 col-xs-12" style="display: inline-block;" participate-key-pressed>
+                <form id="frmSignUp" name="frmSignUp" class="form-inline" ng-hide="signUp.showConfirm">
+                    <div class="field-div col-xs-12 col-md-4">
+                        <label class="">Email<span class="required">*</span></label>
+                    </div>
+                    <div class="field-div col-xs-12 col-md-8">
+                        <input ng-model="signUp.email" class="form-control" style="min-width: 240px;" type="email" maxlength="50" required />
+                    </div>
+                    <div class="field-div col-xs-12 col-md-4">
+                        <label class="">Password<span class="required">*</span></label>
+                    </div>
+                    <div class="field-div col-xs-12 col-md-8">
+                        <div class="form-group" style="position: relative;">
+                            <input type="password" id="password" name="password" class="form-control" ng-model="signUp.password" ng-minlength="8" ng-maxlength="14" required />
+                            <span class="fa fa-eye show-hide-icon" title="Show / Hide Password" onclick="var elem = $('#password'); if (elem.attr('type') == 'password') { elem.attr('type', 'text'); } else { elem.attr('type', 'password'); }"></span>
+                        </div>
+                        <span id="password-length" name="password-length" style="color:red;display:none;" ng-show="(signUp.password != '' && (frmSignUp.password.$error.minlength || frmSignUp.password.$error.maxlength))"><br />Password must be 8-14 characters</span>
+                    </div>
+                    <div class="field-div col-xs-12 col-md-4">
+                        <label class="">Website URL<span class="required">*</span></label>
+                    </div>
+                    <div class="field-div col-xs-12 col-md-8">
+                        <select class="form-control protocol" ng-model="signUp.protocol" required>
+                            <option>http://</option>
+                            <option>https://</option>
+                        </select>
+                        <input ng-model="signUp.url" class="form-control" style="margin-left: 0px;min-width: 240px;" type="text" maxlength="100" required />
+                    </div>
+                    <div class="field-div col-xs-12 col-md-4">
+                        <label class="">Wake-Up Interval<span class="required">*</span></label>
+                    </div>
+                    <div class="field-div col-xs-4 col-md-2">
+                        <input ng-model="signUp.wakeupInterval" class="form-control" type="number" min="1" max="60" required style="width: 90px;" />
+                    </div>
+                    <div class="field-div col-xs-8 col-md-6">
+                        <label class="" style="float: left;">minutes</label>
+                    </div>
+                    <div class="field-div col-xs-12 col-md-offset-4">
+                        <input class="terms-checkbox" type="checkbox" ng-checked="signUp.agreedToTerms" ng-model="signUp.agreedToTerms" ng-change="signUp.onAgreedToTermsCheckChanged();" />
+                        I agree to the <a id="showTermsAndConditions" name="showTermsAndConditions" href="javascript:void(0);">Terms &amp; Conditions</a>
+                    </div>
+                    <div class="field-div col-xs-12 col-md-offset-4">
+                            <span id="feedback" name="feedback" style="display:none;color:red;">{{signUp.feedbackMessage}}</span>
+                            <button id="btnSignUp" name="btnSignUp" class="btn btn-success" ng-disabled="signUp.processingForm" ng-click="frmSignUp.$valid && signUp.onSignUpClick($event);">Sign Up</button>
+                            <img class="sign-up-processing" style="display: none;" ng-show="signUp.processingForm" src="~/Assets/img/loading_2x.gif" />
+                    </div>
+                </form>
+                <div>
+                    <div class="col-xs-12 form-group" ng-show="signUp.showConfirm" id="participationConfirmation" name="participationConfirmation" style="display:none;">
+                        <p>&nbsp;</p>
+                        <p>Thank you for signing up. Please check your email to verify your email address. <button id="btnResendVerification" name="btnResendVerification" class="btn btn-success" ng-click="signUp.onResendVerificationClick($event);">Resend</button></p>
+                        <br />
+                        <span id="feedback1" name="feedback1" style="display:none;color:red;">{{signUp.feedbackMessage}}</span>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+    </div>
+    <!--Container Closed-->
+  
+    <!--============== Footer ==============-->
+
+    <div class="footer">
+        <div class="container">
+            <div class="row copyright">
+                <div class="pull-right"><img src="~/images/logo-footer.png" alt="logo"></div>
+                <p>&copy; @DateTime.Now.Year - SiteAwake.net</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalDialogMessage" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Contact</h2>
+                </div>
+                <div class="modal-body">
+                    <div style="position:relative;">
+                        <div class="row" style="margin: 0px;">
+                            <ng-include src="'/app/components/home/contactView.html'">
+                            </ng-include>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalTermsAndConditions" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Terms &amp; Conditions</h2>
+                </div>
+                <div class="modal-body">
+                    <div style="position:relative;">
+                        <div class="row" style="margin: 0px;">
+                            <iframe class="terms-frame" frameborder="0" scrolling="auto" src="~/terms-and-conditions.html"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success pull-left terms-button" ng-click="signUp.agreeToTerms($event);">@*<i class="fa fa-check-circle-o"></i>&nbsp;&nbsp;*@I Agree</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/Assets/js/angular.min.js"></script>
+    <script type="text/javascript" src="~/app/app.module.js"></script>
+    <script type="text/javascript" src="~/app/shared/common/utilitiesService.js"></script>
+    <script type="text/javascript" src="~/app/components/home/homeService.js"></script>
+    <script type="text/javascript" src="~/app/components/home/messageController.js"></script>
+    <script type="text/javascript" src="~/app/components/home/signUpController.js"></script>
+
+    <script>
+        $(function () {
+            $('#showContactDialog').click(function () {
+                $('#modalDialogMessage').modal('show');
+            });
+
+            $('#showTermsAndConditions').click(function () {
+                $('#modalTermsAndConditions').modal('show');
+
+                $.get('/Home/LogTermsAndConditionsClicked', function (data) {
+                    //$('.result').html(data);
+                });
+            });
+
+            $('#participationConfirmation').show();
+            $('#password-length').show();
+            $('#feedback').show();
+            $('#feedback1').show();
+            $('.sign-up-processing').show();
+
+            $('.dashboard').popover({ container: ".container-dashboard", title: "", content: "<div style='height:471px;'><img src='/Assets/img/mobile-dashboard-demo-1.png' width='270' class='img-responsive' /><div>", html: true, placement: $(window).innerWidth() <= (767 + 1) ? "auto" : "left" });
+
+            $('.dashboard').click(function () {
+                $.get('/Home/LogDashboardExampleClicked', function (data) {
+                    //$('.result').html(data);
+                });
+            });
+
+            $.preloadImages = function () {
+                for (var i = 0; i < arguments.length; i++) {
+                    $("<img />").attr("src", arguments[i]);
+                }
+            }
+
+            $.preloadImages('/Assets/img/mobile-dashboard-demo-1.png');
+        });
+    </script>
+    
+    <!--===Back to top======-->
+    <a href="#" class="scrollup">Scroll</a>
+
+    <!--==============QUERY LIBRARY=================-->
+
+    <script src="~/js/jquery.easing.1.2.js"></script>
+
+    <!--==============BOOTSTRAP JS=================-->
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!--==========ONE PAGE SCROLLING SCRIPTS STARTS===============-->
+
+    <script>
+            $(function() {
+                $('.nav li a').bind('click',function(event){
+                    var $anchor2 = $(this).parent();
+				    var $anchor = $(this);
+					$('.nav  li').removeClass('active');
+                    $anchor2.addClass('active');
+
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top - 80
+                    }, 1500,'easeInOutExpo');
+                    event.preventDefault();
+                });
+
+                $('.slider-btn').bind('click', function (event) {
+                    var $anchor = $(this);
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top - 80
+                    }, 1500, 'easeInOutExpo');
+                    event.preventDefault();
+                });
+            });
+    
+    </script>
+
+    <!--=============ONE PAGE SCROLLING SCRIPTS ENDS============-->
+    <!--=============BACK TO TOP STARTS============-->
+
+    <script>
+    $(document).ready(function(){
+
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 800) {
+                $('.scrollup').fadeIn();
+            } else {
+                $('.scrollup').fadeOut();
+            }
+        });
+
+        $('.scrollup').click(function(){
+            $("html, body").animate({ scrollTop: 0 }, 600);
+            return false;
+        });
+
+    });
+    </script>
+
+    <!--=============BACK TO TOP ENDS============-->
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-83642428-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+</body>
+</html>

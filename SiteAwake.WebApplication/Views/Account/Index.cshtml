@@ -1,0 +1,47 @@
+﻿@model SiteAwake.WebApplication.Models.IndexViewModel
+@{
+    ViewBag.Title = "Wake-Up Settings";
+}
+
+<div style="float:right"><a href="~/Account/EditSettings">Edit</a></div>
+<h2>@(ViewBag.Title)</h2>
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <h4>Review wake-up call settings and status</h4>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>URL:</dt>
+        <dd>
+            <a href="@(Model.Url)" target="_blank">@(Model.Url)</a>
+        </dd>
+        <dt>Status:</dt>
+        <dd>
+            @(Model.LastWakeUpCall != DateTime.MinValue ? Model.WebsiteStatus : "")
+        </dd>
+        <dt>Last Wake-Up Call:</dt>
+        <dd>
+            @(Model.LastWakeUpCall != DateTime.MinValue ? Model.LastWakeUpCall.ToString("g") + " EST" : "")
+        </dd>
+        <dt>Time Taken:</dt>
+        <dd>
+            @(Model.LastWakeUpCall != DateTime.MinValue ? Model.MillisecondsElapsed.ToString() + " ms" : "")
+        </dd>
+        <dt>Uptime:</dt>
+        <dd>
+            @(Model.Uptime.Days) Days, @(Model.Uptime.Hours) Hours, @(Model.Uptime.Minutes) Minutes
+        </dd>               
+        <dt>Interval:</dt>
+        <dd>
+            @(Model.Interval) minute@(Model.Interval > 1 ? "s" : "")
+        </dd>
+        <dt>Enabled:</dt>
+        <dd>
+            @(Model.Enabled ? "Yes" : "No")
+        </dd>
+        <dt>Alerts Enabled:</dt>
+        <dd>
+            @(Model.AlertsEnabled ? "Yes" : "No")
+        </dd>
+    </dl>
+</div>
